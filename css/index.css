@@ -6982,9 +6982,9 @@ body[data-type="link"] #page .page-title {
   display: -ms-flexbox;
   display: box;
   display: flex;
-  position: absolute;
+  position: fixed;
+  top: 235px;
   left: 32px;
-  top: 10px;
 }
 #recent-posts > .recent-post-item .unvisited-post:visited {
   color: var(--anzhiyu-card-bg);
@@ -7005,7 +7005,7 @@ body[data-type="link"] #page .page-title {
   margin-right: 8px;
   top: 10px;
   left: 32px;
-  position: fixed;
+  position: absolute;
 }
 @media screen and (max-width: 768px) {
   #recent-posts > .recent-post-item .recent-post-info .newPost {
@@ -7016,23 +7016,37 @@ body[data-type="link"] #page .page-title {
   font-weight: bold;
 }
 #recent-posts > .recent-post-item .article-meta__categories__box {
+  position: absolute;
+  top: 15px;
+  left: 11px;
+  z-index: 1;
+  max-width: 100%;
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: box;
   display: flex;
-  color: var(--anzhiyu-secondtext);
-  font-size: 0.5rem;
-  position: absolute;
-  left: 32px;
-  top: 10px;
-  opacity: 0.8;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-  filter: alpha(opacity=80);
 }
 #recent-posts > .recent-post-item .article-meta__categories__box .article-meta__categories {
-  margin-right: 8px;
+  display: inline-block;
+  padding: 1px 6px;
+  background: var(--anzhiyu-black-op);
+  border-radius: 8px;
+  margin-left: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--anzhiyu-white);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+#recent-posts > .recent-post-item .article-meta__categories__box .article-meta__categories:hover {
+  background: var(--anzhiyu-main);
 }
 @media screen and (max-width: 768px) {
   #recent-posts > .recent-post-item {
@@ -7747,9 +7761,6 @@ body[data-type="music"] .s-sticker div {
   -o-transition: 0.3s;
   -ms-transition: 0.3s;
   transition: 0.3s;
-}
-body:has(#console.show) #nav-music {
-  display: none !important;
 }
 @media screen and (max-width: 1400px) {
   body #anMusic-page #anMusicSwitching,
@@ -10662,6 +10673,17 @@ h1.page-title + .tag-cloud-list {
   background-attachment: fixed;
   border-radius: 0;
 }
+@media screen and (max-width: 768px) {
+  #page-header #center-console + label i {
+    background: var(--font-color);
+  }
+}
+#page-header #site-info {
+  position: absolute;
+  top: 43%;
+  padding: 0 10px;
+  width: 100%;
+}
 #page-header #site-title,
 #page-header #site-subtitle,
 #page-header #scroll-down .scroll-down-effects {
@@ -13398,6 +13420,32 @@ h1.page-title + .tag-cloud-list {
     transition: 0.3s;
     -webkit-box-shadow: var(--anzhiyu-shadow-main);
     box-shadow: var(--anzhiyu-shadow-main);
+  }
+}
+@media screen and (max-width: 768px) {
+  #nav {
+    background: var(--anzhiyu-card-bg) !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  #page-header #nav #site-name,
+  #page-header #nav #toggle-menu,
+  #page-header:not(.not-top-img) #nav .back-home-button {
+    color: var(--font-color) !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  #blog_name a,
+  .mask-name-container a,
+  #menus a,
+  #nav-right .nav-button a,
+  #nav-right #toggle-menu a {
+    color: var(--font-color) !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  div#bbTimeList {
+    margin: 20px 15px !important;
   }
 }
 #pagination .toPageGroup {
@@ -16175,9 +16223,6 @@ li.card-category-list-item {
 }
 .katex-wrap {
   overflow: auto;
-}
-.katex-wrap::-webkit-scrollbar {
-  display: none;
 }
 mjx-container[display],
 .has-jax {
